@@ -9,3 +9,4 @@ langdetect
 pytrends == 4.8.0
 gdeltdoc == 1.4.0
 pycoingecko == 2.2.0
+seaborn

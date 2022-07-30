@@ -6,6 +6,9 @@ import pandas as pd
 # insert your API key here
 API_KEY = '2AoV3hU5kI9N2MvTJ5N5tFtwX4q'
 
+
+fsyms = ['ETH', 'BTC']
+
 server_name = 'https://api.glassnode.com/v1/metrics'
 endpoints = {
     'price_usd_ohlc': '/market/price_usd_ohlc',
