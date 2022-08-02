@@ -1,6 +1,4 @@
 myvenv/
-data/
-*.csv
 *.json
 __pycache__/
 

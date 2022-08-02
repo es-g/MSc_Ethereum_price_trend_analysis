@@ -3,11 +3,10 @@ textblob == 0.17.1
 tweepy == 4.10.0
 nltk
 sklearn
-wordcloud
 matplotlib
 langdetect
 pytrends == 4.8.0
 gdeltdoc == 1.4.0
-pycoingecko == 2.2.0
 seaborn
 keras
+ta
