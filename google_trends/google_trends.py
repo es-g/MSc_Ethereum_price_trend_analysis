@@ -4,7 +4,7 @@ from pytrends.request import TrendReq
 
 pytrend = TrendReq()
 
-kw_list = ['ethereum', 'ETH', 'ether']
+kw_list = ['ethereum', 'ETH']
 start_period = datetime(2015, 4, 30)
 now = datetime.now()
 
@@ -25,5 +25,7 @@ def get_historical_interest(kw_list, start, now):
     return historical_interest
 
 historical_interest = get_historical_interest(kw_list, start_period, now)
+print('Successfully extracted Google Trends data')
 
-historical_interest.to_csv('Google_Trends_historical_intererst.csv')
+historical_interest.to_csv('data/Google_Trends_historical_interest.csv')
+print('Successfully wrote into CSV file')

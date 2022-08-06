@@ -10,3 +10,4 @@ gdeltdoc == 1.4.0
 seaborn
 keras
 ta
+xgboost == 1.6.1
