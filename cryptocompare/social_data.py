@@ -1,26 +1,12 @@
 import datetime
 import pandas as pd
-import matplotlib.pyplot as plt
 import requests
-
 
 headers = {'authorization': 'Apikey c8642fe0530de2b383434ac6889280d5468ece6a5c89fea8aab6ef73ea06620e'}
 
-endpoints = {
-    'blockchain': 'https://min-api.cryptocompare.com/data/blockchain/histo/day',
-    'daily_symbol_vol' :'https://min-api.cryptocompare.com/data/symbol/histoday',
-    'ohlcv': 'https://min-api.cryptocompare.com/data/v2/histoday'
-}
-
-
-def get_blockchain_data(fsym):
-    """Extract blockchain data
-
-    Args:
-        fsym (str): Currency
-
-    Returns:
-        df (pandas DataFrame): Prices
+def get_social_data(coinId):    
+    """!!!TO DO!!!
+ 
     """    
     yesterday = datetime.datetime.now() - datetime.timedelta(days = 1)
     toTs = datetime.datetime.timestamp(yesterday)
@@ -29,19 +15,15 @@ def get_blockchain_data(fsym):
 
     # Initialize pandas DataFrame object
     df = pd.DataFrame()
-    print('---- Extracting blockchain data for {} ... ---- \n'.format(fsym))
+    print('---- Extracting price data for Coin ID{} ... ---- \n'.format(coinId))
 
     while(next_page):
         count += 1
         print('Run number: {count} \n'.format(count=count))
 
-        url = '{endpoint}?fsym={fsym}&limit=2000&toTs={toTs}'.format(fsym=fsym, toTs=toTs, endpoint=endpoints['blockchain'])
+        url = 'https://min-api.cryptocompare.com/data/social/coin/histo/day?coinId={coinId}&limit=2000&toTs={toTs}&tsym=USD'.format(coundId=coinId, toTs=toTs)
 
         r = requests.get(url, headers=headers)
-
-        if r.json()['Response'] == 'Error':
-            next_page = False
-            print('No more data received. Terminating the loop at run {count} \n'.format(count=count))
 
         if r.json()['Response'] == 'Success':
             print('Response received')
@@ -52,11 +34,18 @@ def get_blockchain_data(fsym):
 
             print('Date range: From {from_date} To {to_date}'.format(from_date=from_date, to_date=to_date))
             
+            if not r.json()['Data'][0].get('overview_page_views'):
+                print('No more data received. Terminating the loop at run {count} \n'.format(count=count))
+                next_page = False
+
             # Append to the end of the DataFrame
-            df = pd.concat([df, pd.json_normalize(r.json()['Data']['Data'])])
+            df = pd.concat([df, pd.json_normalize(r.json()['Data'])])
 
     df['date'] = df['time'].apply(lambda x: datetime.datetime.fromtimestamp(x))
     df = df.sort_values(by='date')
+
+    # Remove zero values
+    df = df[df['high'] != 0]
     df = df.reset_index()
 
     return df

@@ -2,7 +2,7 @@ import pandas as pd
 from TimeBasedCV import TimeBasedCV
 from sklearn.linear_model import LinearRegression, LogisticRegression
 import numpy as np
-from sklearn.metrics import r2_score, accuracy_score, precision_score, f1_score
+from sklearn.metrics import r2_score, accuracy_score, precision_score, f1_score, confusion_matrix
 from sklearn.preprocessing import StandardScaler, Normalizer, MinMaxScaler
 from sklearn.svm import SVC
 
@@ -43,5 +43,6 @@ def evaluate_model(y_true, y_pred):
     metrics['accuracy'] = accuracy_score(y_true=y_true, y_pred=y_pred)
     metrics['precision'] = precision_score(y_true=y_true, y_pred=y_pred)
     metrics['f1_score'] = f1_score(y_true=y_true, y_pred=y_pred)
+    cm = confusion_matrix(y_true=y_true, y_pred=y_pred)
 
-    return metrics
+    return metrics, cm

@@ -3,14 +3,14 @@ import datetime
 
 f = Filters(
     keyword = "ethereum, eth",
-    start_date = "2015-04-30",
+    start_date = "2015-04-01",
     end_date = "2016-08-06"
 )
 
 gd = GdeltDoc()
 
 # Search for articles matching the filters
-# articles = gd.article_search(f)
+articles = gd.article_search(f)
 
 # Get a timeline of the number of articles matching the filters
 timeline_vol = gd.timeline_search("timelinevolraw", f)
@@ -25,7 +25,7 @@ print('Extracted Tone data')
 
 timeline_tone.to_csv('data/GDELT_tone.csv')
 timeline_vol.to_csv('data/GDELT_vol.csv')
-# articles.to_csv('data/GDELT_articles.csv')
+articles.to_csv('data/GDELT_articles.csv')
 
-print('Wrote inot csv files')
+print('Wrote into csv files')
 

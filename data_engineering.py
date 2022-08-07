@@ -126,8 +126,8 @@ def build_features_TA(ohlcv_data, fsyms):
         features.loc[features['symbol'] == fsym,
                      'ULTOSC'] = ult_osc.ultimate_oscillator()
 
-        features = features.drop(columns=[
-                                 'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60'])
+        # features = features.drop(columns=[
+        #                          'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60'])
 
     return features
 
@@ -148,6 +148,7 @@ def build_target(ohlcv_data, fsyms):
 
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_1'] = outcomes.loc[outcomes['symbol']
                                                                                == fsym, 'close_1'].apply(lambda x: 1 if x > 0 else 0)
+
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_3'] = outcomes.loc[outcomes['symbol']
                                                                                == fsym, 'close_3'].apply(lambda x: 1 if x > 0 else 0)
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_5'] = outcomes.loc[outcomes['symbol']
