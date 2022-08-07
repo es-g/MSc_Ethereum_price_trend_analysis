@@ -11,3 +11,4 @@ seaborn
 keras
 ta
 xgboost == 1.6.1
+lightgbm == 3.3.2
