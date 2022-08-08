@@ -147,13 +147,13 @@ def build_target(ohlcv_data, fsyms):
                      'close_7'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-7)
 
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_1'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_1'].apply(lambda x: 1 if x > 0 else 0)
+                                                                               == fsym, 'close_1'].apply(lambda x: 1 if x > 0 else -1)
 
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_3'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_3'].apply(lambda x: 1 if x > 0 else 0)
+                                                                               == fsym, 'close_3'].apply(lambda x: 1 if x > 0 else -1)
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_5'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_5'].apply(lambda x: 1 if x > 0 else 0)
+                                                                               == fsym, 'close_5'].apply(lambda x: 1 if x > 0 else -1)
         outcomes.loc[outcomes['symbol'] == fsym, 'direction_7'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_7'].apply(lambda x: 1 if x > 0 else 0)
+                                                                               == fsym, 'close_7'].apply(lambda x: 1 if x > 0 else -1)
 
     return outcomes

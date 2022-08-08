@@ -1,8 +1,7 @@
 import pandas as pd
 from TimeBasedCV import TimeBasedCV
-from sklearn.linear_model import LinearRegression, LogisticRegression
 import numpy as np
-from sklearn.metrics import r2_score, accuracy_score, precision_score, f1_score, confusion_matrix
+from sklearn.metrics import accuracy_score, precision_score, f1_score, confusion_matrix, recall_score
 from sklearn.preprocessing import StandardScaler, Normalizer, MinMaxScaler
 from sklearn.svm import SVC
 
@@ -16,7 +15,7 @@ def fit_predict(model_instance, X, y, train_period=60, test_period=14):
     test_data_indices = [item[1] for item in split_indices]
     test_data_indices = [item for sublist in test_data_indices for item in sublist]
 
-    preds = pd.Series(index=X.loc[test_data_indices]['date'])
+    preds = pd.Series(index=X.loc[test_data_indices]['date'], dtype='object')
 
     for train_index, test_index in split_indices:
         scaler = StandardScaler()
@@ -43,6 +42,12 @@ def evaluate_model(y_true, y_pred):
     metrics['accuracy'] = accuracy_score(y_true=y_true, y_pred=y_pred)
     metrics['precision'] = precision_score(y_true=y_true, y_pred=y_pred)
     metrics['f1_score'] = f1_score(y_true=y_true, y_pred=y_pred)
+    metrics['recall'] = recall_score(y_true=y_true, y_pred=y_pred)
+
+    return metrics
+
+
+def get_confusion_matrix(y_true, y_pred):
     cm = confusion_matrix(y_true=y_true, y_pred=y_pred)
 
-    return metrics, cm
+    return cm
