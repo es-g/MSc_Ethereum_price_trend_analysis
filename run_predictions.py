@@ -18,7 +18,7 @@ def fit_predict(model_instance, X, y, train_period=60, test_period=14):
     preds = pd.Series(index=X.loc[test_data_indices]['date'], dtype='object')
 
     for train_index, test_index in split_indices:
-        scaler = StandardScaler()
+        scaler = MinMaxScaler()
         test_dates = X.loc[test_index]['date']
         X_train = X.loc[train_index].drop('date', axis=1)
         X_train = scaler.fit_transform(X_train)

@@ -110,6 +110,11 @@ def build_features_TA(ohlcv_data, fsyms):
             features.loc[features['symbol'] == fsym, 'close_ema_{window}'.format(
                 window=window)] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'] / features.loc[features['symbol'] == fsym, 'ema_{window}'.format(window=window)]
 
+            features.loc[features['symbol'] == fsym, 'close-sma_{window}'.format(
+                window=window)] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'] - features.loc[features['symbol'] == fsym, 'sma_{window}'.format(window=window)]    
+            features.loc[features['symbol'] == fsym, 'close-ema_{window}'.format(
+                window=window)] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'] - features.loc[features['symbol'] == fsym, 'ema_{window}'.format(window=window)]    
+
         features.loc[features['symbol'] == fsym, 'rsi_5'] = rsi_5.rsi()
         features.loc[features['symbol'] == fsym, 'rsi_10'] = rsi_10.rsi()
         features.loc[features['symbol'] == fsym, 'rsi_30'] = rsi_30.rsi()
@@ -120,14 +125,25 @@ def build_features_TA(ohlcv_data, fsyms):
 
         features.loc[features['symbol'] == fsym,
                      'OBV'] = obv.on_balance_volume()
+        
         features.loc[features['symbol'] == fsym, 'ADI'] = adi.acc_dist_index()
         features.loc[features['symbol'] == fsym, 'WILLR'] = willr.williams_r()
 
         features.loc[features['symbol'] == fsym,
                      'ULTOSC'] = ult_osc.ultimate_oscillator()
+        
+        features.loc[features['symbol'] == fsym,
+                     'OBV_pct_change_1'] = features.loc[features['symbol'] == fsym, 'OBV'].pct_change()
+        features.loc[features['symbol'] == fsym,
+                     'OBV_diff_1'] = features.loc[features['symbol'] == fsym, 'OBV'].diff()
 
-        # features = features.drop(columns=[
-        #                          'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60'])
+        features.loc[features['symbol'] == fsym,
+                     'ADI_pct_change_1'] = features.loc[features['symbol'] == fsym, 'ADI'].pct_change()
+        features.loc[features['symbol'] == fsym,
+                     'ADI_diff_1'] = features.loc[features['symbol'] == fsym, 'ADI'].diff()
+
+        features = features.drop(columns=[
+                                 'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60', 'OBV', 'ADI'])
 
     return features
 
@@ -137,23 +153,37 @@ def build_target(ohlcv_data, fsyms):
     outcomes = pd.DataFrame(ohlcv_data[['symbol', 'date']])
 
     for fsym in fsyms:
-        outcomes.loc[outcomes['symbol'] == fsym,
-                     'close_1'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-1)
-        outcomes.loc[outcomes['symbol'] == fsym,
-                     'close_3'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-3)
-        outcomes.loc[outcomes['symbol'] == fsym,
-                     'close_5'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-5)
-        outcomes.loc[outcomes['symbol'] == fsym,
-                     'close_7'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-7)
+        for i in range(1, 8):
+            outcomes.loc[outcomes['symbol'] == fsym,
+                         f'close_{i}'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-i)
+            outcomes.loc[outcomes['symbol'] == fsym, f'direction_{i}'] = outcomes.loc[outcomes['symbol']
+                                                                                      == fsym, f'close_{i}'].apply(lambda x: 1 if x > 0 else -1)
 
-        outcomes.loc[outcomes['symbol'] == fsym, 'direction_1'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_1'].apply(lambda x: 1 if x > 0 else -1)
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_2'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-2)
 
-        outcomes.loc[outcomes['symbol'] == fsym, 'direction_3'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_3'].apply(lambda x: 1 if x > 0 else -1)
-        outcomes.loc[outcomes['symbol'] == fsym, 'direction_5'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_5'].apply(lambda x: 1 if x > 0 else -1)
-        outcomes.loc[outcomes['symbol'] == fsym, 'direction_7'] = outcomes.loc[outcomes['symbol']
-                                                                               == fsym, 'close_7'].apply(lambda x: 1 if x > 0 else -1)
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_3'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-3)
+
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_4'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-4)  
+
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_5'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-5)
+
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_6'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-6)
+
+        # outcomes.loc[outcomes['symbol'] == fsym,
+        #              'close_7'] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(-7)
+
+        
+
+        # outcomes.loc[outcomes['symbol'] == fsym, 'direction_3'] = outcomes.loc[outcomes['symbol']
+        #                                                                        == fsym, 'close_3'].apply(lambda x: 1 if x > 0 else -1)
+        # outcomes.loc[outcomes['symbol'] == fsym, 'direction_5'] = outcomes.loc[outcomes['symbol']
+        #                                                                        == fsym, 'close_5'].apply(lambda x: 1 if x > 0 else -1)
+        # outcomes.loc[outcomes['symbol'] == fsym, 'direction_7'] = outcomes.loc[outcomes['symbol']
+        #                                                                        == fsym, 'close_7'].apply(lambda x: 1 if x > 0 else -1)
 
     return outcomes
