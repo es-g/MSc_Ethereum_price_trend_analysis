@@ -1,0 +1,224 @@
+16:19:25,136 root INFO Train period: 30	 Test period: 1
+
+16:19:25,136 root INFO Train period: 30	 Test period: 1
+
+16:19:25,136 root INFO Running predictions for Logistic Regression
+16:20:04,703 root INFO Time taken to train model Logistic Regression for train period 30 and test period 1: 39.56741428375244
+16:20:04,703 root INFO Train period: 30	 Test period: 1
+
+16:20:04,703 root INFO Running predictions for Support Vector Machines
+16:20:36,566 root INFO Time taken to train model Support Vector Machines for train period 30 and test period 1: 31.862884759902954
+16:20:36,566 root INFO Train period: 30	 Test period: 1
+
+16:20:36,567 root INFO Running predictions for XGBoost Classifier
+16:23:37,601 root INFO Time taken to train model XGBoost Classifier for train period 30 and test period 1: 181.0345962047577
+16:23:39,718 root INFO Train period: 30	 Test period: 3
+
+16:23:39,718 root INFO Train period: 30	 Test period: 3
+
+16:23:39,718 root INFO Running predictions for Logistic Regression
+16:23:52,11 root INFO Time taken to train model Logistic Regression for train period 30 and test period 3: 12.293382167816162
+16:23:52,11 root INFO Train period: 30	 Test period: 3
+
+16:23:52,11 root INFO Running predictions for Support Vector Machines
+16:24:02,771 root INFO Time taken to train model Support Vector Machines for train period 30 and test period 3: 10.759663820266724
+16:24:02,771 root INFO Train period: 30	 Test period: 3
+
+16:24:02,771 root INFO Running predictions for XGBoost Classifier
+16:25:01,269 root INFO Time taken to train model XGBoost Classifier for train period 30 and test period 3: 58.49852156639099
+16:25:01,277 root INFO Train period: 30	 Test period: 7
+
+16:25:01,277 root INFO Train period: 30	 Test period: 7
+
+16:25:01,277 root INFO Running predictions for Logistic Regression
+16:25:06,939 root INFO Time taken to train model Logistic Regression for train period 30 and test period 7: 5.661779165267944
+16:25:06,939 root INFO Train period: 30	 Test period: 7
+
+16:25:06,939 root INFO Running predictions for Support Vector Machines
+16:25:11,109 root INFO Time taken to train model Support Vector Machines for train period 30 and test period 7: 4.170185327529907
+16:25:11,109 root INFO Train period: 30	 Test period: 7
+
+16:25:11,109 root INFO Running predictions for XGBoost Classifier
+16:25:36,131 root INFO Time taken to train model XGBoost Classifier for train period 30 and test period 7: 25.022082805633545
+16:25:36,131 root INFO Train period: 30	 Test period: 14
+
+16:25:36,131 root INFO Train period: 30	 Test period: 14
+
+16:25:36,131 root INFO Running predictions for Logistic Regression
+16:25:38,750 root INFO Time taken to train model Logistic Regression for train period 30 and test period 14: 2.6183063983917236
+16:25:38,750 root INFO Train period: 30	 Test period: 14
+
+16:25:38,750 root INFO Running predictions for Support Vector Machines
+16:25:40,883 root INFO Time taken to train model Support Vector Machines for train period 30 and test period 14: 2.133528470993042
+16:25:40,883 root INFO Train period: 30	 Test period: 14
+
+16:25:40,883 root INFO Running predictions for XGBoost Classifier
+16:25:53,96 root INFO Time taken to train model XGBoost Classifier for train period 30 and test period 14: 12.213109731674194
+16:25:53,96 root INFO Train period: 60	 Test period: 1
+
+16:25:53,96 root INFO Train period: 60	 Test period: 1
+
+16:25:53,96 root INFO Running predictions for Logistic Regression
+16:26:32,322 root INFO Time taken to train model Logistic Regression for train period 60 and test period 1: 39.22557353973389
+16:26:32,322 root INFO Train period: 60	 Test period: 1
+
+16:26:32,322 root INFO Running predictions for Support Vector Machines
+16:27:04,237 root INFO Time taken to train model Support Vector Machines for train period 60 and test period 1: 31.914637327194214
+16:27:04,237 root INFO Train period: 60	 Test period: 1
+
+16:27:04,237 root INFO Running predictions for XGBoost Classifier
+16:30:21,483 root INFO Time taken to train model XGBoost Classifier for train period 60 and test period 1: 197.24603533744812
+16:30:21,483 root INFO Train period: 60	 Test period: 3
+
+16:30:21,483 root INFO Train period: 60	 Test period: 3
+
+16:30:21,483 root INFO Running predictions for Logistic Regression
+16:30:34,975 root INFO Time taken to train model Logistic Regression for train period 60 and test period 3: 13.49272608757019
+16:30:34,975 root INFO Train period: 60	 Test period: 3
+
+16:30:34,975 root INFO Running predictions for Support Vector Machines
+16:30:46,754 root INFO Time taken to train model Support Vector Machines for train period 60 and test period 3: 11.778982400894165
+16:30:46,754 root INFO Train period: 60	 Test period: 3
+
+16:30:46,754 root INFO Running predictions for XGBoost Classifier
+16:31:50,930 root INFO Time taken to train model XGBoost Classifier for train period 60 and test period 3: 64.1756329536438
+16:31:50,930 root INFO Train period: 60	 Test period: 7
+
+16:31:50,930 root INFO Train period: 60	 Test period: 7
+
+16:31:50,931 root INFO Running predictions for Logistic Regression
+16:31:56,902 root INFO Time taken to train model Logistic Regression for train period 60 and test period 7: 5.9725141525268555
+16:31:56,902 root INFO Train period: 60	 Test period: 7
+
+16:31:56,902 root INFO Running predictions for Support Vector Machines
+16:32:02,113 root INFO Time taken to train model Support Vector Machines for train period 60 and test period 7: 5.210400581359863
+16:32:02,113 root INFO Train period: 60	 Test period: 7
+
+16:32:02,113 root INFO Running predictions for XGBoost Classifier
+16:32:32,608 root INFO Time taken to train model XGBoost Classifier for train period 60 and test period 7: 30.495485067367554
+16:32:32,608 root INFO Train period: 60	 Test period: 14
+
+16:32:32,608 root INFO Train period: 60	 Test period: 14
+
+16:32:32,616 root INFO Running predictions for Logistic Regression
+16:32:35,955 root INFO Time taken to train model Logistic Regression for train period 60 and test period 14: 3.346703290939331
+16:32:35,955 root INFO Train period: 60	 Test period: 14
+
+16:32:35,956 root INFO Running predictions for Support Vector Machines
+16:32:38,687 root INFO Time taken to train model Support Vector Machines for train period 60 and test period 14: 2.732131242752075
+16:32:38,687 root INFO Train period: 60	 Test period: 14
+
+16:32:38,687 root INFO Running predictions for XGBoost Classifier
+16:32:53,224 root INFO Time taken to train model XGBoost Classifier for train period 60 and test period 14: 14.536487340927124
+16:32:53,224 root INFO Train period: 100	 Test period: 1
+
+16:32:53,224 root INFO Train period: 100	 Test period: 1
+
+16:32:53,224 root INFO Running predictions for Logistic Regression
+16:33:34,908 root INFO Time taken to train model Logistic Regression for train period 100 and test period 1: 41.68481492996216
+16:33:34,908 root INFO Train period: 100	 Test period: 1
+
+16:33:34,908 root INFO Running predictions for Support Vector Machines
+16:34:11,424 root INFO Time taken to train model Support Vector Machines for train period 100 and test period 1: 36.51506757736206
+16:34:11,424 root INFO Train period: 100	 Test period: 1
+
+16:34:11,425 root INFO Running predictions for XGBoost Classifier
+16:37:53,515 root INFO Time taken to train model XGBoost Classifier for train period 100 and test period 1: 222.091139793396
+16:37:53,516 root INFO Train period: 100	 Test period: 3
+
+16:37:53,516 root INFO Train period: 100	 Test period: 3
+
+16:37:53,516 root INFO Running predictions for Logistic Regression
+16:38:09,962 root INFO Time taken to train model Logistic Regression for train period 100 and test period 3: 16.445923566818237
+16:38:09,962 root INFO Train period: 100	 Test period: 3
+
+16:38:09,962 root INFO Running predictions for Support Vector Machines
+16:38:22,644 root INFO Time taken to train model Support Vector Machines for train period 100 and test period 3: 12.682831764221191
+16:38:22,644 root INFO Train period: 100	 Test period: 3
+
+16:38:22,644 root INFO Running predictions for XGBoost Classifier
+16:39:37,514 root INFO Time taken to train model XGBoost Classifier for train period 100 and test period 3: 74.86944198608398
+16:39:37,514 root INFO Train period: 100	 Test period: 7
+
+16:39:37,514 root INFO Train period: 100	 Test period: 7
+
+16:39:37,514 root INFO Running predictions for Logistic Regression
+16:39:43,543 root INFO Time taken to train model Logistic Regression for train period 100 and test period 7: 6.029494762420654
+16:39:43,544 root INFO Train period: 100	 Test period: 7
+
+16:39:43,544 root INFO Running predictions for Support Vector Machines
+16:39:50,910 root INFO Time taken to train model Support Vector Machines for train period 100 and test period 7: 7.366646766662598
+16:39:50,910 root INFO Train period: 100	 Test period: 7
+
+16:39:50,910 root INFO Running predictions for XGBoost Classifier
+16:40:22,572 root INFO Time taken to train model XGBoost Classifier for train period 100 and test period 7: 31.66156530380249
+16:40:22,572 root INFO Train period: 100	 Test period: 14
+
+16:40:22,573 root INFO Train period: 100	 Test period: 14
+
+16:40:22,573 root INFO Running predictions for Logistic Regression
+16:40:25,495 root INFO Time taken to train model Logistic Regression for train period 100 and test period 14: 2.9228622913360596
+16:40:25,495 root INFO Train period: 100	 Test period: 14
+
+16:40:25,495 root INFO Running predictions for Support Vector Machines
+16:40:28,146 root INFO Time taken to train model Support Vector Machines for train period 100 and test period 14: 2.6505744457244873
+16:40:28,146 root INFO Train period: 100	 Test period: 14
+
+16:40:28,146 root INFO Running predictions for XGBoost Classifier
+16:40:44,848 root INFO Time taken to train model XGBoost Classifier for train period 100 and test period 14: 16.701570987701416
+16:40:44,848 root INFO Train period: 200	 Test period: 1
+
+16:40:44,856 root INFO Train period: 200	 Test period: 1
+
+16:40:44,856 root INFO Running predictions for Logistic Regression
+16:41:54,52 root INFO Time taken to train model Logistic Regression for train period 200 and test period 1: 69.19646859169006
+16:41:54,52 root INFO Train period: 200	 Test period: 1
+
+16:41:54,53 root INFO Running predictions for Support Vector Machines
+16:42:42,10 root INFO Time taken to train model Support Vector Machines for train period 200 and test period 1: 47.95802927017212
+16:42:42,10 root INFO Train period: 200	 Test period: 1
+
+16:42:42,10 root INFO Running predictions for XGBoost Classifier
+16:47:05,178 root INFO Time taken to train model XGBoost Classifier for train period 200 and test period 1: 263.1675260066986
+16:47:05,178 root INFO Train period: 200	 Test period: 3
+
+16:47:05,178 root INFO Train period: 200	 Test period: 3
+
+16:47:05,178 root INFO Running predictions for Logistic Regression
+16:47:27,341 root INFO Time taken to train model Logistic Regression for train period 200 and test period 3: 22.163643836975098
+16:47:27,341 root INFO Train period: 200	 Test period: 3
+
+16:47:27,341 root INFO Running predictions for Support Vector Machines
+16:47:43,590 root INFO Time taken to train model Support Vector Machines for train period 200 and test period 3: 16.248353481292725
+16:47:43,590 root INFO Train period: 200	 Test period: 3
+
+16:47:43,590 root INFO Running predictions for XGBoost Classifier
+16:49:14,954 root INFO Time taken to train model XGBoost Classifier for train period 200 and test period 3: 91.36449098587036
+16:49:14,954 root INFO Train period: 200	 Test period: 7
+
+16:49:14,954 root INFO Train period: 200	 Test period: 7
+
+16:49:14,954 root INFO Running predictions for Logistic Regression
+16:49:24,506 root INFO Time taken to train model Logistic Regression for train period 200 and test period 7: 9.551552772521973
+16:49:24,506 root INFO Train period: 200	 Test period: 7
+
+16:49:24,506 root INFO Running predictions for Support Vector Machines
+16:49:30,936 root INFO Time taken to train model Support Vector Machines for train period 200 and test period 7: 6.430371046066284
+16:49:30,936 root INFO Train period: 200	 Test period: 7
+
+16:49:30,936 root INFO Running predictions for XGBoost Classifier
+16:50:08,146 root INFO Time taken to train model XGBoost Classifier for train period 200 and test period 7: 37.20981431007385
+16:50:08,146 root INFO Train period: 200	 Test period: 14
+
+16:50:08,146 root INFO Train period: 200	 Test period: 14
+
+16:50:08,146 root INFO Running predictions for Logistic Regression
+16:50:12,710 root INFO Time taken to train model Logistic Regression for train period 200 and test period 14: 4.563703536987305
+16:50:12,710 root INFO Train period: 200	 Test period: 14
+
+16:50:12,710 root INFO Running predictions for Support Vector Machines
+16:50:15,868 root INFO Time taken to train model Support Vector Machines for train period 200 and test period 14: 3.1583616733551025
+16:50:15,868 root INFO Train period: 200	 Test period: 14
+
+16:50:15,868 root INFO Running predictions for XGBoost Classifier
+16:50:33,804 root INFO Time taken to train model XGBoost Classifier for train period 200 and test period 14: 17.936262130737305

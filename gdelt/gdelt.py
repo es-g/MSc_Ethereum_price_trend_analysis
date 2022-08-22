@@ -3,8 +3,8 @@ import datetime
 
 f = Filters(
     keyword = "ethereum, eth",
-    start_date = "2015-04-01",
-    end_date = "2016-08-06"
+    start_date = "2017-08-14",
+    end_date = "2022-08-14"
 )
 
 gd = GdeltDoc()

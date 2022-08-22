@@ -1,0 +1,19 @@
+19:02:08,73 root INFO Running Urban Planning
+19:02:08,74 root WARNING TEST
+19:02:39,783 root INFO Running Urban Planning
+19:02:39,784 root WARNING TEST
+19:02:53,209 root INFO Running Urban Planning
+19:02:53,210 root WARNING TEST
+19:11:51,474 root INFO Train period: 30	 Test period: 1
+
+19:11:51,474 root INFO Train period: 30	 Test period: 1
+
+19:11:51,474 root INFO Running predictions for Logistic Regression
+19:12:31,590 root INFO Time taken to train model Logistic Regression for train period 30 and test period 1: 40.11618614196777
+19:12:31,590 root INFO Train period: 30	 Test period: 1
+
+19:12:31,590 root INFO Running predictions for Support Vector Machines
+19:13:02,739 root INFO Time taken to train model Support Vector Machines for train period 30 and test period 1: 31.14931607246399
+19:13:02,739 root INFO Train period: 30	 Test period: 1
+
+19:13:02,739 root INFO Running predictions for XGBoost Classifier

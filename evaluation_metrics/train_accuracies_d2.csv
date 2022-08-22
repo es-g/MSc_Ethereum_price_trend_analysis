@@ -1,0 +1,49 @@
+i,train_accuracy
+30_1_Logistic Regression,0.7
+30_1_Support Vector Machines,0.833333333
+30_1_XGBoost Classifier,1
+30_3_Logistic Regression,0.666666667
+30_3_Support Vector Machines,0.833333333
+30_3_XGBoost Classifier,1
+30_7_Logistic Regression,0.666666667
+30_7_Support Vector Machines,0.666666667
+30_7_XGBoost Classifier,1
+30_14_Logistic Regression,0.766666667
+30_14_Support Vector Machines,0.766666667
+30_14_XGBoost Classifier,1
+60_1_Logistic Regression,0.683333333
+60_1_Support Vector Machines,0.7
+60_1_XGBoost Classifier,1
+60_3_Logistic Regression,0.666666667
+60_3_Support Vector Machines,0.65
+60_3_XGBoost Classifier,1
+60_7_Logistic Regression,0.633333333
+60_7_Support Vector Machines,0.633333333
+60_7_XGBoost Classifier,1
+60_14_Logistic Regression,0.683333333
+60_14_Support Vector Machines,0.666666667
+60_14_XGBoost Classifier,1
+100_1_Logistic Regression,0.61
+100_1_Support Vector Machines,0.61
+100_1_XGBoost Classifier,1
+100_3_Logistic Regression,0.63
+100_3_Support Vector Machines,0.63
+100_3_XGBoost Classifier,1
+100_7_Logistic Regression,0.63
+100_7_Support Vector Machines,0.62
+100_7_XGBoost Classifier,1
+100_14_Logistic Regression,0.61
+100_14_Support Vector Machines,0.63
+100_14_XGBoost Classifier,1
+200_1_Logistic Regression,0.555
+200_1_Support Vector Machines,0.595
+200_1_XGBoost Classifier,1
+200_3_Logistic Regression,0.555
+200_3_Support Vector Machines,0.585
+200_3_XGBoost Classifier,1
+200_7_Logistic Regression,0.615
+200_7_Support Vector Machines,0.62
+200_7_XGBoost Classifier,1
+200_14_Logistic Regression,0.61
+200_14_Support Vector Machines,0.615
+200_14_XGBoost Classifier,1

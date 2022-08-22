@@ -11,23 +11,19 @@ def build_features_TA(ohlcv_data, fsyms):
     features = pd.DataFrame(ohlcv_data[['symbol', 'date']])
 
     for fsym in fsyms:
-        sma_5 = SMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=5)
-        sma_10 = SMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=10)
-        sma_30 = SMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=30)
-        sma_60 = SMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=60)
+        for window in range(5, 60):
+            # Simple Moving Average
+            sma = SMAIndicator(close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=window)            
+            features.loc[features['symbol'] == fsym,
+                        f'sma_{window}'] = sma.sma_indicator()
 
-        ema_5 = EMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=5)
-        ema_10 = EMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=10)
-        ema_30 = EMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=30)
-        ema_60 = EMAIndicator(
-            close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=60)
+            # Exponential Moving Average
+            ema = EMAIndicator(close=ohlcv_data[ohlcv_data['symbol'] == fsym]['close'], window=window)
+                   
+            features.loc[features['symbol'] == fsym,
+                        f'ema_{window}'] = ema.ema_indicator()
+        
+
 
         macd = MACD(
             ohlcv_data[ohlcv_data['symbol'] == fsym]['close'],
@@ -82,27 +78,7 @@ def build_features_TA(ohlcv_data, fsyms):
 
         # Calculating TA indicators
 
-        # Simple Moving Average
-        features.loc[features['symbol'] == fsym,
-                     'sma_5'] = sma_5.sma_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'sma_10'] = sma_10.sma_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'sma_30'] = sma_30.sma_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'sma_60'] = sma_60.sma_indicator()
-
-        # Exponential Moving Average
-        features.loc[features['symbol'] == fsym,
-                     'ema_5'] = ema_5.ema_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'ema_10'] = ema_10.ema_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'ema_30'] = ema_30.ema_indicator()
-        features.loc[features['symbol'] == fsym,
-                     'ema_60'] = ema_60.ema_indicator()
-
-        for window in [5, 10, 30, 60]:
+        for window in range(5, 60):
             features.loc[features['symbol'] == fsym, 'return_{window}'.format(
                 window=window)] = ohlcv_data[ohlcv_data['symbol'] == fsym]['close'].pct_change(window)
             features.loc[features['symbol'] == fsym, 'close_sma_{window}'.format(
@@ -132,18 +108,19 @@ def build_features_TA(ohlcv_data, fsyms):
         features.loc[features['symbol'] == fsym,
                      'ULTOSC'] = ult_osc.ultimate_oscillator()
         
-        features.loc[features['symbol'] == fsym,
-                     'OBV_pct_change_1'] = features.loc[features['symbol'] == fsym, 'OBV'].pct_change()
-        features.loc[features['symbol'] == fsym,
-                     'OBV_diff_1'] = features.loc[features['symbol'] == fsym, 'OBV'].diff()
+        for i in range(1, 30):
+            features.loc[features['symbol'] == fsym,
+                        f'OBV_pct_change_{i}'] = features.loc[features['symbol'] == fsym, 'OBV'].pct_change(i)
+            features.loc[features['symbol'] == fsym,
+                        f'OBV_diff_{i}'] = features.loc[features['symbol'] == fsym, 'OBV'].diff(i)
 
         features.loc[features['symbol'] == fsym,
                      'ADI_pct_change_1'] = features.loc[features['symbol'] == fsym, 'ADI'].pct_change()
         features.loc[features['symbol'] == fsym,
                      'ADI_diff_1'] = features.loc[features['symbol'] == fsym, 'ADI'].diff()
 
-        features = features.drop(columns=[
-                                 'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60', 'OBV', 'ADI'])
+        # features = features.drop(columns=[
+        #                          'sma_5', 'sma_10', 'sma_30', 'sma_60', 'ema_5', 'ema_10', 'ema_30', 'ema_60', 'OBV', 'ADI'])
 
     return features
 

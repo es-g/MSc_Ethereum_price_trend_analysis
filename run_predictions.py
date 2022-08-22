@@ -2,7 +2,7 @@ import pandas as pd
 from TimeBasedCV import TimeBasedCV
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_score, f1_score, confusion_matrix, recall_score
-from sklearn.preprocessing import StandardScaler, Normalizer, MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.svm import SVC
 
 
@@ -29,11 +29,17 @@ def fit_predict(model_instance, X, y, train_period=60, test_period=14):
 
         clf = model_instance
         clf.fit(X_train, y_train)
+        y_train_pred = clf.predict(X_train)
+
+        # print(y_train_pred)
+        
+
+        accuracy = accuracy_score(y_true=y_train, y_pred=list(y_train_pred)),
 
         preds[test_dates] = clf.predict(X_test)
 
 
-    return preds
+    return preds, accuracy
 
 
 def evaluate_model(y_true, y_pred):
