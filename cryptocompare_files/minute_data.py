@@ -1,12 +1,13 @@
 import cryptocompare
 import datetime
 import pandas as pd
+from config import API_KEY
 
 
 
 def get_historical_price_minute():
 
-    cryptocompare.cryptocompare._set_api_key_parameter('c8642fe0530de2b383434ac6889280d5468ece6a5c89fea8aab6ef73ea06620e')
+    cryptocompare.cryptocompare._set_api_key_parameter(f'{API_KEY}')
 
     historical_price_minute = cryptocompare.get_historical_price_minute('ETH', currency='USD', limit=2000)
     df = pd.DataFrame(historical_price_minute)

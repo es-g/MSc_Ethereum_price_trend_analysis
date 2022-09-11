@@ -2,9 +2,10 @@ import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
+from config import API_KEY
 
 
-headers = {'authorization': 'Apikey c8642fe0530de2b383434ac6889280d5468ece6a5c89fea8aab6ef73ea06620e'}
+headers = {'authorization': f'Apikey {API_KEY}'}
 
 endpoints = {
     'blockchain': 'https://min-api.cryptocompare.com/data/blockchain/histo/day',

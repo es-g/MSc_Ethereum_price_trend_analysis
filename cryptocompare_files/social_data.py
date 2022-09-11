@@ -1,12 +1,15 @@
 import datetime
 import pandas as pd
 import requests
+from config import API_KEY
 
-headers = {'authorization': 'Apikey c8642fe0530de2b383434ac6889280d5468ece6a5c89fea8aab6ef73ea06620e'}
+
+
+headers = {'authorization': 'Apikey {API_KEY}'.format(API_KEY)}
 
 def get_social_data(coinId):    
-    """!!!TO DO!!!
- 
+    """NOT COMPLETE
+    TO BE DONE
     """    
     yesterday = datetime.datetime.now() - datetime.timedelta(days = 1)
     toTs = datetime.datetime.timestamp(yesterday)
