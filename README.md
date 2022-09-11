@@ -40,11 +40,13 @@ where `<myvenv>` is the name of your virtual environment
 
 1. Get free API key from https://min-api.cryptocompare.com
 2. Paste your API key into `config.py` file
-3. 
+3. Run simulations.ipynb
 
+<br />
+<br />
 
-
-
+______________________
+<br />
 The MIT License (MIT)
 
 Copyright (c) 2022 Yesbol Gabdullin
